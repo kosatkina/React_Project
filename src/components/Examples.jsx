@@ -1,6 +1,7 @@
 // React Hook
 import { useState } from 'react';
-import TabButton from './components/TabButton.jsx';
+import TabButton from './TabButton.jsx';
+import Section from './Section.jsx';
 import { EXAMPLES } from "../data.js";
 
 
@@ -42,17 +43,16 @@ export default function Examples() {
     //        </section>
         
     return (
-        <section id="examples">
-          <h2>Examples</h2>
+        <Section title="Examples" id="examples">
           <menu>
             <TabButton isSelected={selectedTopic === 'components'} 
-                      onSelect={function() {handleSelect('components')}}>Components</TabButton>
+                      onClick={function() {handleSelect('components')}}>Components</TabButton>
             <TabButton isSelected={selectedTopic === 'jsx'}
-                      onSelect={()=> handleSelect('jsx')}>JSX</TabButton>
+                      onClick={()=> handleSelect('jsx')}>JSX</TabButton>
             <TabButton isSelected={selectedTopic === 'props'}
-                      onSelect={()=> handleSelect('props')}>Props</TabButton>
+                      onClick={()=> handleSelect('props')}>Props</TabButton>
             <TabButton isSelected={selectedTopic === 'state'}
-                      onSelect={()=> handleSelect('state')}>State</TabButton>
+                      onClick={()=> handleSelect('state')}>State</TabButton>
           </menu>
           {/*Conditional Output of content - if... elese...*/}
           {!selectedTopic ? <p>Please select a topic.</p> : null} 
@@ -69,6 +69,6 @@ export default function Examples() {
           </div>
           ) : null} 
           {/*same as: {selectedTopic && <div>....</div> } */}
-        </section>
+        </Section>
     );
 }
