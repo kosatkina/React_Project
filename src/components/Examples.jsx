@@ -68,7 +68,7 @@ export default function Examples() {
           <Tabs
           // Custom component's indicator is passing as a dynamic value in {}
           // Build-in elements are passing as a string in ""
-          buttonsContainer="menu" 
+          // buttonsContainer="menu" 
           buttons={
             <>
               <TabButton isSelected={selectedTopic === 'components'} 
